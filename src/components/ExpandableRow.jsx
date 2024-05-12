@@ -9,7 +9,13 @@ export default function ExpandableRow({ title, children }) {
       <div className="expandable-row">
         <legend>{title}</legend>
         <button onClick={() => setIsExpanded(!isExpanded)}>
-          <img src="/arrow-icon.svg" alt="" width="30" height="30" />
+          <img
+            src="/arrow-icon.svg"
+            alt=""
+            width="30"
+            height="30"
+            aria-expanded={isExpanded}
+          />
         </button>
       </div>
       <div className="children">{isExpanded && children}</div>
