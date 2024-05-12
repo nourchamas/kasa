@@ -6,6 +6,46 @@ import Tag from "../components/Tag";
 import "../assets/details.scss";
 import Rating from "../components/Rating";
 import ExpandableRow from "../components/ExpandableRow";
+import { useState } from "react";
+
+function Carousel({ data }) {
+  const [index, setIndex] = useState(0);
+
+  return (
+    <div className="carousel">
+      <span className="prev">
+        <button
+          onClick={() =>
+            setIndex((c) => {
+              if (c - 1 < 0) return 0;
+              return c - 1;
+            })
+          }
+        >
+          <img src="/arrow-icon.svg" alt="" width="30" height="30" />
+        </button>
+      </span>
+      <span className="next">
+        <button
+          onClick={() =>
+            setIndex((c) => {
+              if (c + 1 > data.pictures.length - 1)
+                return data.pictures.length - 1;
+              return c + 1;
+            })
+          }
+        >
+          <img src="/arrow-icon.svg" alt="" width="30" height="30" />
+        </button>
+      </span>
+      <img className="cover" src={data.pictures[index]} alt={data.title} />
+
+      <span className="index">
+        {index + 1} / {data.pictures.length}
+      </span>
+    </div>
+  );
+}
 
 export default function Details() {
   const params = useParams();
@@ -17,7 +57,7 @@ export default function Details() {
     <>
       <Header />
       <main className="wrap">
-        <img className="cover" src={details[0].cover} alt={details[0].title} />
+        <Carousel data={details[0]} />
         <div
           style={{
             display: "flex",
