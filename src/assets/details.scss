@@ -1,9 +1,24 @@
 @import "./_variables.scss";
 
 .cover {
-  max-height: 415px;
+  height: 415px;
   width: 100%;
   object-fit: cover;
+}
+
+.index {
+  position: absolute;
+  white-space: nowrap;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.25rem 1.25rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(5px);
+  --webkit-backdrop-filter: blur(5px);
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .details {
@@ -66,7 +81,43 @@
   display: none;
 }
 
+.carousel {
+  position: relative;
+
+  & .prev,
+  & .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $white-color;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: invert(1);
+    z-index: 1;
+
+    & button {
+      all: unset;
+    }
+  }
+
+  & .prev {
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  & .next {
+    right: 0;
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+
 @media screen and (max-width: $mobile-bp) {
+  .cover {
+    height: 250px;
+  }
+
   .more-info,
   .tags-and-rating {
     flex-direction: column;
