@@ -25,9 +25,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  & img[aria-expanded="true"] {
+    transform: rotate(180deg);
+  }
 }
 
 .children {
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   padding: 1rem;
 }
