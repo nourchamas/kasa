@@ -1,0 +1,93 @@
+@import "./_variables.scss";
+
+.cover {
+  max-height: 415px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.details {
+  & h1 {
+    color: $accent-color;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  & .location {
+    color: $black-color;
+    font-weight: 300;
+    margin-top: 1rem;
+  }
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tags-and-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.more-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.host,
+.responsive-host {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & img {
+    width: 60px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+  }
+
+  & span {
+    color: $accent-color;
+    font-weight: 600;
+    max-width: min-content;
+  }
+}
+
+.responsive-host {
+  display: none;
+}
+
+@media screen and (max-width: $mobile-bp) {
+  .more-info,
+  .tags-and-rating {
+    flex-direction: column;
+    gap: 1rem;
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  .responsive-host {
+    display: flex;
+  }
+
+  .host {
+    display: none;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

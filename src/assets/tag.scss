@@ -1,0 +1,12 @@
+@import "./variables";
+
+.tag {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 9999px;
+  background-color: $accent-color;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: $white-color;
+  width: fit-content;
+}

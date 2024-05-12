@@ -1,0 +1,33 @@
+@import "./variables";
+
+.expandable-row {
+  background-color: $accent-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-radius: 10px;
+
+  & legend {
+    color: $white-color;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  & button {
+    background-color: $accent-color;
+    color: $white-color;
+    border: none;
+    padding: 1rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.children {
+  background-color: rgba(0, 0, 0, 0.0);
+  padding: 1rem;
+}
