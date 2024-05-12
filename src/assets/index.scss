@@ -75,6 +75,17 @@ body {
   }
 }
 
+@media screen and (max-width: $mobile-bp) {
+  .home-banner {
+    height: 150px;
+    padding: 1rem;
+
+    & p {
+      font-size: 2rem;
+    }
+  }
+}
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
