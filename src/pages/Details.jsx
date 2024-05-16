@@ -17,7 +17,7 @@ function Carousel({ data }) {
         <button
           onClick={() =>
             setIndex((c) => {
-              if (c - 1 < 0) return 0;
+              if (c - 1 < 0) return data.pictures.length-1;
               return c - 1;
             })
           }
@@ -29,9 +29,9 @@ function Carousel({ data }) {
         <button
           onClick={() =>
             setIndex((c) => {
-              if (c + 1 > data.pictures.length - 1)
-                return data.pictures.length - 1;
-              return c + 1;
+             
+              if(c<data.pictures.length - 1) return c + 1;
+              return 0;
             })
           }
         >

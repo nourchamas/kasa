@@ -25,4 +25,15 @@ header {
   & .selected {
     text-decoration: underline;
   }
+  img{
+@media  screen and (max-width:480px) {
+  .logo-mobile{
+width: 100px;
+
+
+  }
+}
+
+
+  }
 }
